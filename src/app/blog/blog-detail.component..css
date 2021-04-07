@@ -1,0 +1,18 @@
+h1 {
+    text-align: center !important;
+    padding: 75px 0px 0px 0px;
+    margin-top: 75px;
+    font-weight: bold;
+  }
+  h2 {
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+    /* font-family: 'Lobster', cursive; */
+  }
+
+
+/* div markdown p img {
+  height: 187px;
+  width: auto;
+} */

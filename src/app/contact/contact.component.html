@@ -1,0 +1,68 @@
+<!-- ======= Intro Section ======= -->
+<section id="intro" class="clearfix">
+    <div class="container" data-aos="fade-up">
+      <div class="intro-img" data-aos="zoom-out" data-aos-delay="100">
+        <img src="assets/img/intro-img.svg" alt="" class="img-fluid">
+      </div>
+      <div class="intro-info" data-aos="zoom-in" data-aos-delay="100">
+        <h1 class="info-h1">Contact Us</h1>
+      </div>
+    </div>
+</section>
+<!-- End Intro Section -->
+
+<!-- ======= Contact Section ======= -->
+<section id="contact">
+    <div class="container-fluid" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2  class="section-title">{{contactPage?.title}}</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="map mb-4 mb-lg-0">
+                    <iframe id="iframeData" [src]="contactPage?.url | safe" title="Location Samp Technologies"
+                        frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen>Samp</iframe>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-5 info">
+                        <i class="ion-ios-location-outline"></i>
+                        <p>{{contactPage?.address}}</p>
+                    </div>
+                    <div class="col-md-4 info">
+                        <i class="ion-ios-email-outline"></i>
+                        <p>{{contactPage?.email}}</p>
+                    </div>
+                    <div class="col-md-3 info">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <p>{{contactPage?.phone}}</p>
+                    </div>
+                </div>
+                <div class="form">
+                    <form [formGroup]="contactForm" (ngSubmit)="onData()" >
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">
+                                <input type="text" name="name" formControlName="name" class="form-control" id="name" placeholder="Your Name" required/>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Your Email" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="subject" name="subject" id="subject" placeholder="Subject" required/>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" formControlName="message" name="message" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Contact Section -->

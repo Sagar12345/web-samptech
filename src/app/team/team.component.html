@@ -1,0 +1,66 @@
+<!-- ======= Intro Section ======= -->
+<section id="intro" class="clearfix">
+    <div class="container" data-aos="fade-up">
+        <div class="intro-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/intro-img.svg" alt="" class="img-fluid">
+        </div>
+        <div class="intro-info" data-aos="zoom-in" data-aos-delay="100">
+            <h1 class="info-h1">Our Team and Client</h1>
+        </div>
+    </div>
+</section><!-- End Intro Section -->
+
+<!-- ======= Team Section ======= -->
+<section id="team">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>{{team?.title}}</h2>
+            <p>{{team?.description}}</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-6" *ngFor="let item of team?.teams;let index = i">
+                <div class="member">
+                    <img [src]="item?.location + item?.imageSrc" class="img-fluid" alt="item?.imageAlt">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>{{item?.name}}</h4>
+                            <span>{{item?.jobTitle}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Team Section -->
+
+<!-- ======= Clients Section ======= -->
+<section id="clients" class="section-bg">
+   
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2> {{client?.title}} </h2>
+            <p class="section-header-p"> {{client?.description}} </p>
+        </div>
+            <swiper [config]="config" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let item of client?.clients;">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-6">
+                               <img [src]="item?.location + item?.imageSrc" class="img-fluid img-show" alt={{item?.imageAlt}} loading="lazy">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-xs-6">
+                                <h5>{{item?.clientname}}</h5>
+                                <p class="review">{{item?.review}}</p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+               
+                <div class="swiper-pagination"></div>
+
+            </swiper>
+    </div>
+</section>
+<!-- <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div> -->

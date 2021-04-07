@@ -1,0 +1,36 @@
+<!-- ======= Intro Section ======= -->
+<section id="intro" class="clearfix">
+    <div class="container" data-aos="fade-up">
+      <div class="intro-img" data-aos="zoom-out" data-aos-delay="100">
+        <img src="assets/img/intro-img.svg" alt="" class="img-fluid">
+      </div>
+      <div class="intro-info" data-aos="zoom-in" data-aos-delay="100">
+        <h1 class="info-h1">Upskill Knowledge in Minutes</h1>
+      </div>
+    </div>
+  </section><!-- End Intro Section -->
+
+<h3>  </h3>
+<div class="row">
+    <div class="col-md-4 box-blog" *ngFor= "let blog of dataSource;">
+        <div class="card" >
+            <img [src]="blog?.location + blog?.imageSrc" class="img-v img-fluid" alt="blog?.imageAlt">
+            <div class="card-body text-center">
+                <h5 class="card-title">
+                    {{ blog?.blogtitle }}
+                </h5>
+                <p class="card-text">
+                    {{ blog?.shortDesc }}
+                </p>
+                <a routerLink="{{blog?.canonical}}" class="btn btn-light">Read More</a>
+                <!-- <a  routerLink="{{blog?.canonical}}" class="btn btn-light">Read More</a> -->
+            </div>
+        </div> 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <br/>
+    </div>
+</div>

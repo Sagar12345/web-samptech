@@ -1,0 +1,50 @@
+h3 {
+    text-align: center;
+    padding: 75px 0px 0px 0px;
+    margin-top: 75px;
+    font-weight: bold;
+}
+
+.card {
+    width: 300px;
+}
+
+.img-v {
+    height: 150px;
+    width: auto;
+}
+
+.btn-light:hover {
+    box-shadow: inset 110px 0 0 0 #000000;
+    color: white;
+}
+
+.box-blog {
+    -ms-flex: 0 0 25%;
+    flex: 1 0 5%;
+    max-width: 13%;
+    margin: 10px 100px 50px 100px ;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 600px) {
+    .box-blog {
+        flex-direction: column;
+    }
+
+    h3 {
+        word-wrap: break-word;
+    }
+
+    .col-md-4 {
+        margin:25px 160px 9px 60px;
+    }
+    
+}
+
+h1 {
+    color: white;
+    font-weight: bolder;
+    font-size: xxx-large;
+ }
+

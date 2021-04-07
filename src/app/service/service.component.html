@@ -1,0 +1,40 @@
+<!-- ======= Intro Section ======= -->
+<section id="intro" class="clearfix">
+    <div class="container" data-aos="fade-up">
+        <div class="intro-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/intro-img.svg" alt="" class="img-fluid">
+        </div>
+        <div class="intro-info" data-aos="zoom-in" data-aos-delay="100">
+            <h1 class="info-h1">Our Services</h1>
+        </div>
+    </div>
+</section><!-- End Intro Section -->
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="section-bg">
+    <div class="container" data-aos="fade-up">
+        <header class="section-header">
+            <h2> {{service?.title}}</h2>
+            <p> {{service?.description}} </p>
+        </header>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5" *ngFor="let item of service?.services;">
+                <div class="box">
+                    <div class="icon">
+                        <img [src]="item?.location + item?.imageSrc" class="img-fluid" width="60px" height="20px"
+                            loading="lazy">
+                    </div>
+                    <h3 class="title">
+                        {{item?.title}}
+                    </h3>
+                    <p class="description">
+                        {{item?.description}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Services Section -->

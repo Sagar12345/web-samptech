@@ -1,0 +1,126 @@
+<h1> Career Opening</h1>
+<h2>Begin your career with Samp Technologies, we offer the best industry experience & career opportunity to grow with us.
+</h2>
+<ng-container *ngIf="currentOpening;then currentOpen; else notOpening"></ng-container>
+<ng-template #currentOpen>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Tech</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">Opening</th>
+                    <th scope="col">Skill</th>
+                    <th scope="col">Apply</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let car of career">
+                <tr>
+                    <td class="firstTd"> 
+                        <img [src]="car?.location + car?.imageSrc" class="img-fluid img-add" loading="lazy" alt={{car?.imageSrc.toString()}}>
+                        {{car?.tech}}
+                    </td>
+                    <td>{{car?.exp}}</td>
+                    <td>{{car?.opening}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#skillModal"
+                            (click)="openSkill(car)">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#applyModal" (click)="openApply(car)">
+                            <i class="far fa-paper-plane"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-template>
+
+<ng-template #notOpening>
+    <h4>No Vacancy.</h4>
+</ng-template>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" id="skillModal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title heading"> {{name}} </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" *ngFor="let item of skills">
+               
+                <h6> {{item?.title}} </h6>
+                <ul *ngFor="let t of item?.desc">
+                    <li>{{t?.desc}}</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" id="applyModal">
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content">
+            <form [formGroup]="careerForm" (ngSubmit)="onSubmit()">
+                <div class="modal-header">
+                    <h5 class="modal-title heading">{{name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">@</div>
+                        </div>
+                        <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-mobile"></i>
+                            </div>
+                        </div>
+                        <input type="number" class="form-control" id="name" placeholder="Mobile Number"
+                            formControlName="mobile">
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="name" required placeholder="Email"
+                            formControlName="email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Resume</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file"  (change)="uploadFile($event)" class="custom-file-input"
+                                id="inputGroupFile01">
+                            <label class="custom-file-label" #fileUploader for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" [disabled]="!careerForm.valid" type="submit">Apply</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

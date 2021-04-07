@@ -1,0 +1,37 @@
+span.sol {
+   color: darkblue !important;
+}
+
+h1 {
+   color: white;
+   font-weight: bolder;
+}
+
+.introh1 {
+   padding-top: 50px;
+   padding-left: 50px;
+   padding-right: 50px;
+   padding-bottom: 18px;
+   color: black;
+   text-align: center;
+}
+
+p {
+   text-indent: 50px;
+   text-align: justify;
+}
+.info-h1{
+   font-family: "Montserrat", sans-serif;
+}
+
+.digital-text {
+   font-weight: bold;
+   font-style: italic;
+}
+
+h2 {
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bolder;
+  /* font-family: 'Lobster', cursive; */
+}

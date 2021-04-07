@@ -1,0 +1,60 @@
+<!-- ======= Intro Section ======= -->
+<section id="intro" class="clearfix">
+  <div class="container" data-aos="fade-up">
+    <div class="intro-img" data-aos="zoom-out" data-aos-delay="100">
+      <img src="assets/img/intro-img.svg" alt="" class="img-fluid">
+    </div>
+    <div class="intro-info" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="info-h1">Our Portfolio</h1>
+    </div>
+  </div>
+</section>
+<!-- End Intro Section -->
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="clearfix">
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h2 class="section-title"> {{portfoilos?.title}}</h2>
+      <p> {{portfoilos?.description}} </p>
+    </header>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12">
+        <ul id="portfolio-flters">
+        </ul>
+      </div>
+    </div>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" *ngFor="let item of portfoilos?.portfolios;let i = index">
+        <div class="portfolio-wrap">
+          <img [src]="item?.location + item?.imageSrc" class="img-fluid" alt="item?.imageAlt">
+          <div class="portfolio-info">
+            <h3>
+              <a class="text-style" [href]="item?.linkPlaystore" target="_blank" *ngIf="item?.linkPlaystore != ''">
+                {{item?.linkName}}
+              </a>
+            </h3>
+            <p class="text-style">{{item?.type}}</p>
+            <div>
+              <a data-gall="portfolioGallery" title="{{item?.linkName}}" (click)="showLightbox(i)"
+                class="venobox link-preview">
+                <i class="ion ion-eye"></i>
+              </a>
+              <a [href]="item?.linkPlaystore" class="link-details" title="{{item?.linkName}}" target="_blank"
+                *ngIf="item?.linkPlaystore != ''">
+                <i class="ion ion-android-open"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Portfolio Section -->
+<script src="assets/js/main.js"></script>
+
+<ng-image-fullscreen-view [images]="imageObject" [imageIndex]="currentIndex" [show]="showFlag" (close)="closeEventHandler()">
+</ng-image-fullscreen-view>

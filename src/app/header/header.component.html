@@ -1,0 +1,40 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container">
+    <div class="logo float-left">
+      <a href="#intro" [routerLink]="['']">
+        <img src="assets/img/logo.png" alt="Samp Technologies" loading="lazy">
+      </a>
+    </div>
+    <nav class="main-nav float-right d-none d-lg-block">
+      <ul>
+        <li>
+          <a [routerLink]="['']">Home</a>
+        </li>
+        <li>
+          <a [routerLink]="['about']">About Us</a>
+        </li>
+        <li>
+          <a [routerLink]="['services']">Services</a>
+        </li>
+        <li>
+          <a [routerLink]="['portfolio']" (click)="gotoSection()">Portfolio</a>
+        </li>
+        <li>
+          <a [routerLink]="['teams']">Team</a>
+        </li>
+        <li> 
+          <a [routerLink]="['blog']"> Blog </a> 
+        </li>
+        <li>
+          <a [routerLink]="['contact']"> Contact </a>
+        </li>
+        <li>
+          <a [routerLink]="['career']" class="image">
+            <img class="we-hire" src="/assets/img/We are Hiring.png" alt="Samp Technology" loading="lazy">
+          </a>
+        </li>
+      </ul>
+    </nav><!-- .main-nav -->
+  </div>
+</header><!-- #header -->

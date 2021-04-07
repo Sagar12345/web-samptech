@@ -1,0 +1,31 @@
+#header .container {
+    max-width: 1600px;
+}
+
+/* .main-nav a.image {
+    size: 100vh;
+    padding: 6px !important;
+    margin: 5px !important;
+} */
+
+.we-hire {
+    height: 85px;
+    width: auto;
+}
+
+
+a.image {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .we-hire {
+        display: none;
+    }
+}
+
+
+
+

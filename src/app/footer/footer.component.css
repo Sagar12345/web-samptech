@@ -1,0 +1,16 @@
+.we-hire {
+    height: 100px;
+    width: auto;
+    image-rendering: optimizeQuality;
+}
+
+
+a.image {
+    padding: 0px;
+    margin: 0px;
+}
+
+h6 {
+    font-weight: bolder;
+    font-size: x-large;
+}
