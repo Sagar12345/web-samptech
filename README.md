@@ -12,4 +12,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Technologies
 
-Angular 10, jQuery, Html, CSS
+Angular 10, jQuery, Html, CSS, Bootstrap
